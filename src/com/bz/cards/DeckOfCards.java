@@ -14,9 +14,9 @@ public class DeckOfCards {
      * deckOfCard is used to initialize the deck with cards
      */
     public void deckOfCard() {
-        for (int i = 0; i < suits.length; i++) {
-            for (int j = 0; j < ranks.length; j++) {
-                deck[i][j] = suits[i] + "" + ranks[j] + " ";
+        for (int row = 0; row < suits.length; row++) {
+            for (int column = 0; column < ranks.length; column++) {
+                deck[row][column] = suits[row] + "" + ranks[column] + " ";
             }
         }
     }
@@ -26,13 +26,13 @@ public class DeckOfCards {
      */
     public void shuffleCard() {
         Random random = new Random();
-        for (int i = 0; i < suits.length; i++) {
-            for (int j = 0; j < ranks.length; j++) {
+        for (int row = 0; row < suits.length; row++) {
+            for (int column = 0; column < ranks.length; column++) {
                 int r = (random.nextInt(suits.length));
                 int k = (random.nextInt(ranks.length));
                 String temp = deck[r][k];
-                deck[r][k] = deck[i][j];
-                deck[i][j] = temp;
+                deck[r][k] = deck[row][column];
+                deck[row][column] = temp;
             }
         }
     }
@@ -41,10 +41,10 @@ public class DeckOfCards {
      * display method is used to display the shuffled deck
      */
     public void display() {
-        for (int i = 0; i < suits.length; i++) {
-            System.out.print(" person" + i + "	");
-            for (int j = 0; j < ranks.length; j++) {
-                System.out.print(deck[i][j]);
+        for (int row = 0; row < suits.length; row++) {
+            System.out.print(" person" + row + "	");
+            for (int column = 0; column < ranks.length; column++) {
+                System.out.print(deck[row][column]);
             }
             System.out.println();
         }
