@@ -1,4 +1,4 @@
-package com.bz.cards;
+package com.bz.day11assignments;
 
 import java.util.Scanner;
 
